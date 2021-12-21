@@ -24,12 +24,15 @@ fi
 
 
 
-# 修改用户目录权限
+# 修改用户目录权限 以方便安装其他
 sudo chmod 777 /home/${username}
 
+# install miniconda3
 ./miniconda.sh -b -p /home/${username}/anaconda3
 cd /home/${username}/anaconda3/bin
 su - ${username} -c "cd /home/${username}/anaconda3/bin && ./conda init"
+
+# 修改用户目录权限 以防止其他用户访问
 sudo chmod 700 /home/${username}
 
 
