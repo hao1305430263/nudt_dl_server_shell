@@ -1,0 +1,999 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-190329530-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-190329530-1');
+</script>
+  
+  
+    <title>作业示例（开发者） &#8212; dl_server_114 服务器用户手册  文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="服务器显卡使用文档" href="dgx.html" />
+    <link rel="prev" title="作业示例（基本）" href="jobsample1.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=#4000FF data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#job/jobsample2" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="dl_server_114 服务器用户手册  文档"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../_static/logos.png" height="26"
+                   alt="dl_server_114 服务器用户手册 文档 logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">超算平台用户手册</span>
+          <span class="md-header-nav__topic"> 作业示例（开发者） </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/SJTU-HPC/docs.hpc.sjtu.edu.cn" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    SJTU HPC Docs
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">dl_server_114 服务器用户手册  文档</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">作业</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="dl_server_114 服务器用户手册 文档" class="md-nav__button md-logo">
+      
+        <img src="../_static/logos.png" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="dl_server_114 服务器用户手册 文档">超算平台用户手册</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/SJTU-HPC/docs.hpc.sjtu.edu.cn" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    SJTU HPC Docs
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickstart/index.html" class="md-nav__link">quickstart</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../system/index.html" class="md-nav__link">系统</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../accounts/index.html" class="md-nav__link">帐号</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../login/index.html" class="md-nav__link">登录</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../transport/index.html" class="md-nav__link">数据传输</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html" class="md-nav__link">作业</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="slurm.html" class="md-nav__link">Slurm 作业调度系统</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="jobsample1.html" class="md-nav__link">作业示例（基本）</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 作业示例（开发者） </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">作业示例（开发者）</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#job-jobsample2--page-root" class="md-nav__link">作业示例（开发者）</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#openmp" class="md-nav__link">OpenMP 示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#gcc-9-2-0" class="md-nav__link">使用GCC 9.2.0编译</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#intelopenmp" class="md-nav__link">使用Intel编译器构建OpenMP应用</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#mpi" class="md-nav__link">MPI示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#openmpi-gcc" class="md-nav__link">使用OpenMPI+GCC编译</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#intelmpi" class="md-nav__link">使用Intel编译器构建MPI应用</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#mpi-openmp" class="md-nav__link">MPI+OpenMP混合示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#gcc" class="md-nav__link">使用GCC编译如下：</a>
+        </li>
+        <li class="md-nav__item"><a href="#icc" class="md-nav__link">使用ICC编译</a>
+        </li>
+        <li class="md-nav__item"><a href="#id2" class="md-nav__link">将作业提交到4个计算节点上</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#cuda" class="md-nav__link">CUDA示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id3" class="md-nav__link">使用CUDA编译</a>
+        </li>
+        <li class="md-nav__item"><a href="#slurmdgx2" class="md-nav__link">将作业提交到SLURM上的dgx2分区：</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#sbatchintel-linpack" class="md-nav__link">通过sbatch运行Intel LINPACK</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#openmp" class="md-nav__link">OpenMP 示例</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#mpi" class="md-nav__link">MPI示例</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#mpi-openmp" class="md-nav__link">MPI+OpenMP混合示例</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#cuda" class="md-nav__link">CUDA示例</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#sbatchintel-linpack" class="md-nav__link">通过sbatch运行Intel LINPACK</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="dgx.html" class="md-nav__link">服务器显卡使用文档</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../faq/index.html" class="md-nav__link">常见问题</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../download/index.html" class="md-nav__link">文档下载</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#job-jobsample2--page-root" class="md-nav__link">作业示例（开发者）</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#openmp" class="md-nav__link">OpenMP 示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#gcc-9-2-0" class="md-nav__link">使用GCC 9.2.0编译</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#intelopenmp" class="md-nav__link">使用Intel编译器构建OpenMP应用</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#mpi" class="md-nav__link">MPI示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#openmpi-gcc" class="md-nav__link">使用OpenMPI+GCC编译</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#intelmpi" class="md-nav__link">使用Intel编译器构建MPI应用</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#mpi-openmp" class="md-nav__link">MPI+OpenMP混合示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#gcc" class="md-nav__link">使用GCC编译如下：</a>
+        </li>
+        <li class="md-nav__item"><a href="#icc" class="md-nav__link">使用ICC编译</a>
+        </li>
+        <li class="md-nav__item"><a href="#id2" class="md-nav__link">将作业提交到4个计算节点上</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#cuda" class="md-nav__link">CUDA示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id3" class="md-nav__link">使用CUDA编译</a>
+        </li>
+        <li class="md-nav__item"><a href="#slurmdgx2" class="md-nav__link">将作业提交到SLURM上的dgx2分区：</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#sbatchintel-linpack" class="md-nav__link">通过sbatch运行Intel LINPACK</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="id1">
+<h1 id="job-jobsample2--page-root">作业示例（开发者）<a class="headerlink" href="#job-jobsample2--page-root" title="永久链接至标题">¶</a></h1>
+<p>介绍不同并行环境的作业示例。</p>
+<p>本文档中使用的作业样本可以在/lustre/share/samples中找到。
+在继续之前，请阅读有关预置软件环境的文档。</p>
+<section id="openmp">
+<h2 id="openmp">OpenMP 示例<a class="headerlink" href="#openmp" title="永久链接至标题">¶</a></h2>
+<p>以OpenMP为例，名为omp_hello.c代码如下：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;omp.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">nthreads</span><span class="p">,</span><span class="w"> </span><span class="n">tid</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="cm">/* Fork a team of threads giving them their own copies of variables */</span><span class="w"></span>
+<span class="w">  </span><span class="cp">#pragma omp parallel private(nthreads, tid)</span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">     </span><span class="cm">/* Obtain thread number */</span><span class="w"></span>
+<span class="w">     </span><span class="n">tid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omp_get_thread_num</span><span class="p">();</span><span class="w"></span>
+<span class="w">     </span><span class="n">printf</span><span class="p">(</span><span class="s">"Hello World from thread = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">tid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">     </span><span class="cm">/* Only master thread does this */</span><span class="w"></span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">nthreads</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omp_get_num_threads</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"Number of threads = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">nthreads</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">     </span><span class="p">}</span><span class="w">  </span><span class="cm">/* All threads join master thread and disband */</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<section id="gcc-9-2-0">
+<h3 id="gcc-9-2-0">使用GCC 9.2.0编译<a class="headerlink" href="#gcc-9-2-0" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load gcc
+$ gcc -fopenmp omp_hello.c -o omphello
+</pre></div>
+</div>
+<p>在本地运行4线程应用程序</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">4</span> <span class="o">&amp;&amp;</span> ./omphello
+</pre></div>
+</div>
+<p>准备一个名为ompgcc.slurm的作业脚本</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=Hello_OpenMP</span>
+<span class="c1">#SBATCH --partition=small</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+<span class="c1">#SBATCH -n 8</span>
+<span class="c1">#SBATCH --ntasks-per-node=8</span>
+
+<span class="nb">ulimit</span> -l unlimited
+<span class="nb">ulimit</span> -s unlimited
+
+module load gcc
+
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">8</span>
+./omphello
+</pre></div>
+</div>
+<p>提交到SLURM</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sbatch ompgcc.slurm
+</pre></div>
+</div>
+<section id="intelopenmp">
+<h4 id="intelopenmp">使用Intel编译器构建OpenMP应用<a class="headerlink" href="#intelopenmp" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load intel
+$ icc -fopenmp omp_hello.c -o omphello
+</pre></div>
+</div>
+<p>在本地运行4线程应用程序</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">4</span> <span class="o">&amp;&amp;</span> ./omphello
+</pre></div>
+</div>
+<p>准备一个名为ompicc.slurm的作业脚本</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=Hello_OpenMP</span>
+<span class="c1">#SBATCH --partition=small</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+<span class="c1">#SBATCH -n 8</span>
+<span class="c1">#SBATCH –-ntasks-per-node=8</span>
+<span class="nb">ulimit</span> -l unlimited
+<span class="nb">ulimit</span> -s unlimited
+
+module load intel
+
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">8</span>
+./omphello
+</pre></div>
+</div>
+<p>提交到SLURM</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sbatch ompicc.slurm
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="mpi">
+<h2 id="mpi">MPI示例<a class="headerlink" href="#mpi" title="永久链接至标题">¶</a></h2>
+<p>以mpihello.c为例，代码如下：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mpi.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;netdb.h&gt;</span><span class="cp"></span>
+
+<span class="cp">#define MAX_HOSTNAME_LENGTH 256</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">pid</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">hostname</span><span class="p">[</span><span class="n">MAX_HOSTNAME_LENGTH</span><span class="p">];</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">numprocs</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rank</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rc</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/* Initialize MPI. Pass reference to the command line to</span>
+<span class="cm">     * allow MPI to take any arguments it needs</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/* It's always good to check the return values on MPI calls */</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">MPI_SUCCESS</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">"MPI_Init failed</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/* Get the number of processes and the rank of this process */</span><span class="w"></span>
+<span class="w">    </span><span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">numprocs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rank</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/* let's see who we are to the "outside world" - what host and what PID */</span><span class="w"></span>
+<span class="w">    </span><span class="n">gethostname</span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_HOSTNAME_LENGTH</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getpid</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/* say who we are */</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Rank %d of %d has pid %5d on %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">numprocs</span><span class="p">,</span><span class="w"> </span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="n">hostname</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/* allow MPI to clean up after itself */</span><span class="w"></span>
+<span class="w">    </span><span class="n">MPI_Finalize</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<section id="openmpi-gcc">
+<h3 id="openmpi-gcc">使用OpenMPI+GCC编译<a class="headerlink" href="#openmpi-gcc" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load gcc/8.3.0-gcc-4.8.5 openmpi/3.1.5-gcc-9.2.0
+$ mpicc mpihello.c -o mpihello
+</pre></div>
+</div>
+<p>准备一个名为job_openmpi.slurm的作业脚本</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=mpihello</span>
+<span class="c1">#SBATCH --partition=cpu</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+<span class="c1">#SBATCH -n 80</span>
+<span class="c1">#SBATCH --ntasks-per-node=40</span>
+
+<span class="nb">ulimit</span> -s unlimited
+<span class="nb">ulimit</span> -l unlimited
+
+module load gcc/8.3.0-gcc-4.8.5 openmpi/3.1.5-gcc-9.2.0
+
+srun --mpi<span class="o">=</span>pmi2 ./mpihello
+</pre></div>
+</div>
+<p>最后，将作业提交到SLURM</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sbatch job_openmpi.slurm
+</pre></div>
+</div>
+<section id="intelmpi">
+<h4 id="intelmpi">使用Intel编译器构建MPI应用<a class="headerlink" href="#intelmpi" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load intel-parallel-studio/cluster.2019.5-intel-19.0.5
+$ mpiicc mpihello.c -o mpihello
+</pre></div>
+</div>
+<p>准备一个名为job_impi.slurm的作业脚本</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=mpihello</span>
+<span class="c1">#SBATCH --partition=cpu</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+<span class="c1">#SBATCH -n 80</span>
+<span class="c1">#SBATCH --ntasks-per-node=40</span>
+
+<span class="nb">ulimit</span> -s unlimited
+<span class="nb">ulimit</span> -l unlimited
+
+module load intel-parallel-studio/cluster.2019.5-intel-19.0.5
+
+<span class="nb">export</span> <span class="nv">I_MPI_PMI_LIBRARY</span><span class="o">=</span>/usr/lib64/libpmi.so
+<span class="nb">export</span> <span class="nv">I_MPI_FABRICS</span><span class="o">=</span>shm:ofi
+
+srun ./mpihello
+</pre></div>
+</div>
+<p>最后，将作业提交到SLURM</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sbatch -p cpu job_impi.slurm
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="mpi-openmp">
+<h2 id="mpi-openmp">MPI+OpenMP混合示例<a class="headerlink" href="#mpi-openmp" title="永久链接至标题">¶</a></h2>
+<p>以hybridmpi.c为例，代码如下：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"mpi.h"</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;omp.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">numprocs</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">namelen</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">processor_name</span><span class="p">[</span><span class="n">MPI_MAX_PROCESSOR_NAME</span><span class="p">];</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">iam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">MPI_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">numprocs</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rank</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MPI_Get_processor_name</span><span class="p">(</span><span class="n">processor_name</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">namelen</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="cp">#pragma omp parallel default(shared) private(iam, np)</span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">np</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omp_get_num_threads</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">iam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omp_get_thread_num</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Hello from thread %d out of %d from process %d out of %d on %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"></span>
+<span class="w">           </span><span class="n">iam</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">numprocs</span><span class="p">,</span><span class="w"> </span><span class="n">processor_name</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">MPI_Finalize</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<section id="gcc">
+<h3 id="gcc">使用GCC编译如下：<a class="headerlink" href="#gcc" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load gcc/8.3.0-gcc-4.8.5 openmpi/3.1.5-gcc-9.2.0
+$ mpicc -O3 -fopenmp hybridmpi.c -o hybridmpi
+</pre></div>
+</div>
+<p>准备一个名为hybridmpi.slurm的作业脚本</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=HybridMPI</span>
+<span class="c1">#SBATCH --partition=cpu</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+<span class="c1">#SBAkCH --ntasks-per-node=1</span>
+<span class="c1">#SBATCH --exclusive</span>
+<span class="c1">#SBATCH --time=00:01:00</span>
+
+<span class="nb">ulimit</span> -s unlimited
+<span class="nb">ulimit</span> -l unlimited
+
+module load gcc/8.3.0-gcc-4.8.5 openmpi/3.1.5-gcc-9.2.0
+
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">40</span>
+srun --mpi<span class="o">=</span>pmi2 ./hybridmpi
+</pre></div>
+</div>
+</section>
+<section id="icc">
+<h3 id="icc">使用ICC编译<a class="headerlink" href="#icc" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load intel-parallel-studio/cluster.2019.5-intel-19.0.5
+$ mpiicc -O3 -fopenmp hybridmpi.c -o hybridmpi
+</pre></div>
+</div>
+<p>准备一个名为hybridmpi.slurm的作业脚本</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=HybridMPI</span>
+<span class="c1">#SBATCH --partition=cpu</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+<span class="c1">#SBATCH --ntasks-per-node=1</span>
+<span class="c1">#SBATCH --exclusive</span>
+<span class="c1">#SBATCH --time=00:01:00</span>
+
+<span class="nb">ulimit</span> -s unlimited
+<span class="nb">ulimit</span> -l unlimited
+
+module load intel-parallel-studio/cluster.2019.5-intel-19.0.5
+
+<span class="nb">export</span> <span class="nv">I_MPI_DEBUG</span><span class="o">=</span><span class="m">5</span>
+<span class="nb">export</span> <span class="nv">I_MPI_PMI_LIBRARY</span><span class="o">=</span>/usr/lib64/libpmi.so
+<span class="nb">export</span> <span class="nv">I_MPI_FABRICS</span><span class="o">=</span>shm:ofi
+
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">40</span>
+srun ./hybridmpi
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3 id="id2">将作业提交到4个计算节点上<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sbatch -N <span class="m">4</span> hybridmpi.slurm
+</pre></div>
+</div>
+</section>
+</section>
+<section id="cuda">
+<h2 id="cuda">CUDA示例<a class="headerlink" href="#cuda" title="永久链接至标题">¶</a></h2>
+<p>以cublashello.cu为例，代码如下：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//Example 2. Application Using C and CUBLAS: 0-based indexing</span>
+<span class="c1">//-----------------------------------------------------------</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cuda_runtime.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"cublas_v2.h"</span><span class="cp"></span>
+<span class="cp">#define M 6</span>
+<span class="cp">#define N 5</span>
+<span class="cp">#define IDX2C(i,j,ld) (((j)*(ld))+(i))</span>
+
+<span class="k">static</span><span class="w"> </span><span class="n">__inline__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">modify</span><span class="w"> </span><span class="p">(</span><span class="n">cublasHandle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ldm</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">beta</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="n">cublasSscal</span><span class="w"> </span><span class="p">(</span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">-</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m</span><span class="p">[</span><span class="n">IDX2C</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">ldm</span><span class="p">)],</span><span class="w"> </span><span class="n">ldm</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">cublasSscal</span><span class="w"> </span><span class="p">(</span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="n">ldm</span><span class="o">-</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m</span><span class="p">[</span><span class="n">IDX2C</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">ldm</span><span class="p">)],</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="n">cudaError_t</span><span class="w"> </span><span class="n">cudaStat</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cublasStatus_t</span><span class="w"> </span><span class="n">stat</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cublasHandle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">devPtrA</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="w"> </span><span class="p">(</span><span class="n">M</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">"host memory allocation failed"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">EXIT_FAILURE</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">M</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">a</span><span class="p">[</span><span class="n">IDX2C</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">M</span><span class="p">)]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">cudaStat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cudaMalloc</span><span class="w"> </span><span class="p">((</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">devPtrA</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="o">*</span><span class="n">N</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cudaStat</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">cudaSuccess</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">"device memory allocation failed"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">EXIT_FAILURE</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cublasCreate</span><span class="p">(</span><span class="o">&amp;</span><span class="n">handle</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">CUBLAS_STATUS_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">"CUBLAS initialization failed</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">EXIT_FAILURE</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cublasSetMatrix</span><span class="w"> </span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">),</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">devPtrA</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">CUBLAS_STATUS_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">"data download failed"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">cudaFree</span><span class="w"> </span><span class="p">(</span><span class="n">devPtrA</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">cublasDestroy</span><span class="p">(</span><span class="n">handle</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">EXIT_FAILURE</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">modify</span><span class="w"> </span><span class="p">(</span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="n">devPtrA</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0f</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cublasGetMatrix</span><span class="w"> </span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">),</span><span class="w"> </span><span class="n">devPtrA</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">CUBLAS_STATUS_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">"data upload failed"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">cudaFree</span><span class="w"> </span><span class="p">(</span><span class="n">devPtrA</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">cublasDestroy</span><span class="p">(</span><span class="n">handle</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">EXIT_FAILURE</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">cudaFree</span><span class="w"> </span><span class="p">(</span><span class="n">devPtrA</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">cublasDestroy</span><span class="p">(</span><span class="n">handle</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">M</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">"%7.0f"</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">IDX2C</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">M</span><span class="p">)]);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">EXIT_SUCCESS</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<section id="id3">
+<h3 id="id3">使用CUDA编译<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load gcc/8.3.0-gcc-4.8.5 cuda/10.1.243-gcc-8.3.0
+$ nvcc cublashello.cu -o cublashello -lcublas
+</pre></div>
+</div>
+<p>作业脚本cublashello.slurm如下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=cublas</span>
+<span class="c1">#SBATCH --partition=dgx2</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+<span class="c1">#SBATCH -N 1</span>
+<span class="c1">#SBATCH --ntasks-per-node=1</span>
+<span class="c1">#SBATCH --cpus-per-task=6</span>
+<span class="c1">#SBATCH --gres=gpu:1</span>
+
+<span class="nb">ulimit</span> -s unlimited
+<span class="nb">ulimit</span> -l unlimited
+
+module load gcc/8.3.0-gcc-4.8.5 cuda/10.1.243-gcc-8.3.0
+
+./cublashello
+</pre></div>
+</div>
+</section>
+<section id="slurmdgx2">
+<h3 id="slurmdgx2">将作业提交到SLURM上的dgx2分区：<a class="headerlink" href="#slurmdgx2" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sbatch cublashello.slurm
+</pre></div>
+</div>
+</section>
+</section>
+<section id="sbatchintel-linpack">
+<h2 id="sbatchintel-linpack">通过sbatch运行Intel LINPACK<a class="headerlink" href="#sbatchintel-linpack" title="永久链接至标题">¶</a></h2>
+<p>假如在多节点运行MPI作业，首先准备执行文件并输入数据：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/tmp
+$ cp /lustre/usr/samples/LINPACK/64/xhpl_intel64 .
+$ cp /lustre/usr/samples/LINPACK/64/HPL.dat .
+</pre></div>
+</div>
+<p>然后，准备一个的作业脚本linpack.sh。
+在此脚本中，我们请求cpu分区上的64个内核，每个节点16个内核。
+请注意，MPI作业是通过srun（不是mpirun）启动的。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=Intel_MPLINPACK</span>
+<span class="c1">#SBATCH --partition=cpu</span>
+<span class="c1">#SBATCH --mail-type=end</span>
+<span class="c1">#SBATCH --mail-user=YOU@EMAIL.COM</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+<span class="c1">#SBATCH -n 80</span>
+<span class="c1">#SBATCH --ntasks-per-node=40</span>
+
+<span class="nb">ulimit</span> -s unlimited
+<span class="nb">ulimit</span> -l unlimited
+
+module load intel-parallel-studio/cluster.2019.5-intel-19.0.5
+
+<span class="nb">export</span> <span class="nv">I_MPI_PMI_LIBRARY</span><span class="o">=</span>/usr/lib64/libpmi.so
+<span class="nb">export</span> <span class="nv">I_MPI_FABRICS</span><span class="o">=</span>shm:ofi
+<span class="nb">export</span> <span class="nv">I_MPI_DEBUG</span><span class="o">=</span><span class="m">100</span>
+
+srun ./xhpl_intel64
+</pre></div>
+</div>
+<p>最后，将作业提交到SLURM.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sbatch linpack.sh
+Submitted batch job <span class="m">358</span>
+</pre></div>
+</div>
+<p>我们可以附加到正在运行的任务，并观察其STDOUT和STDERR：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sattach <span class="m">358</span>.0
+$ CTRL-C
+</pre></div>
+</div>
+<p>我们可以查看作业输出文件：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ tail -f /lustre/home/hpc-jianwen/tmp/358.out
+</pre></div>
+</div>
+<p>停止工作：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ scancel <span class="m">358</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="jobsample1.html" title="作业示例（基本）"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> 作业示例（基本） </span>
+              </div>
+            </a>
+          
+          
+            <a href="dgx.html" title="服务器显卡使用文档"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> 服务器显卡使用文档 </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright .
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a><br/>
+              沪交ICP备20190201
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

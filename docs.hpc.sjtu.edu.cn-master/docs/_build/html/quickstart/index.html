@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-190329530-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-190329530-1');
+</script>
+  
+  
+    <title>quickstart &#8212; dl_server_114 服务器用户手册  文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="系统" href="../system/index.html" />
+    <link rel="prev" title="深度学习服务器平台用户文档" href="../index.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=#4000FF data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#quickstart/index" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="dl_server_114 服务器用户手册  文档"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../_static/logos.png" height="26"
+                   alt="dl_server_114 服务器用户手册 文档 logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">超算平台用户手册</span>
+          <span class="md-header-nav__topic"> quickstart </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">dl_server_114 服务器用户手册  文档</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="dl_server_114 服务器用户手册 文档" class="md-nav__button md-logo">
+      
+        <img src="../_static/logos.png" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="dl_server_114 服务器用户手册 文档">超算平台用户手册</a>
+  </label>
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> quickstart </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">quickstart</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#quickstart-index--page-root" class="md-nav__link">quickstart</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id1" class="md-nav__link">使用服务器四步骤</a>
+        </li>
+        <li class="md-nav__item"><a href="#id2" class="md-nav__link">资源如何选择？</a>
+        </li>
+        <li class="md-nav__item"><a href="#id3" class="md-nav__link">连接服务器</a>
+        </li>
+        <li class="md-nav__item"><a href="#hello-world" class="md-nav__link">提交 Hello world 单节点作业</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#id1" class="md-nav__link">使用服务器四步骤</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#id2" class="md-nav__link">资源如何选择？</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#id3" class="md-nav__link">连接服务器</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#hello-world" class="md-nav__link">提交 Hello world 单节点作业</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../system/index.html" class="md-nav__link">系统</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../accounts/index.html" class="md-nav__link">帐号</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../login/index.html" class="md-nav__link">登录</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../transport/index.html" class="md-nav__link">数据传输</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../job/index.html" class="md-nav__link">作业提交</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../faq/index.html" class="md-nav__link">常见问题</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../download/index.html" class="md-nav__link">文档下载</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#quickstart-index--page-root" class="md-nav__link">quickstart</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id1" class="md-nav__link">使用服务器四步骤</a>
+        </li>
+        <li class="md-nav__item"><a href="#id2" class="md-nav__link">资源如何选择？</a>
+        </li>
+        <li class="md-nav__item"><a href="#id3" class="md-nav__link">连接服务器</a>
+        </li>
+        <li class="md-nav__item"><a href="#hello-world" class="md-nav__link">提交 Hello world 单节点作业</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="quickstart">
+<h1 id="quickstart-index--page-root">quickstart<a class="headerlink" href="#quickstart-index--page-root" title="永久链接至标题">¶</a></h1>
+<p>这里快速展示如何调用服务器资源。</p>
+<section id="id1">
+<h2 id="id1">使用服务器四步骤<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>ssh 登陆服务器 -&gt; 编写自己的脚本 -&gt; 编写 slurm 脚本 -&gt; 提交slurm 脚本</p>
+</section>
+<section id="id2">
+<h2 id="id2">资源如何选择？<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>可以先按下面的默认配置使用。</p>
+<p>详情请见：<a class="reference external" href="../job/slurm.html">Slurm 作业调度系统</a></p>
+</section>
+<section id="id3">
+<h2 id="id3">连接服务器<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>目前服务器只允许通过 <a class="reference external" href="../login/ssh.html">SSH 客户端</a>连接使用服务器。</p>
+<p>了解服务器登陆方法，请查看 <a class="reference external" href="../login/index.html">常见问题</a>;</p>
+</section>
+<section id="hello-world">
+<h2 id="hello-world">提交 Hello world 单节点作业<a class="headerlink" href="#hello-world" title="永久链接至标题">¶</a></h2>
+<p>以 Hello world 为例，演示服务器作业提交过程。</p>
+<ol class="arabic simple">
+<li><p>撰写名为 hello_world.py 代码如下</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"hello world!"</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>创建一个 anaconda 环境</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>编写一个名为 hello_world.slurm 的作业脚本</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+
+<span class="c1">#SBATCH --job-name=hello_world</span>
+<span class="c1">#SBATCH --partition=debug  ## 这行在使用时请不要更改。</span>
+<span class="c1">#SBATCH --gres=gpu:1 ## 调用的 gpu 的数量，当程序不需要 gpu 的时候，请删除这行</span>
+<span class="c1">#SBATCH --output=%j.out ## shell 返回的结果 将被输出到这个文档。</span>
+<span class="c1">#SBATCH --error=%j.err  ## shell 返回的错误 将被输出到这个文档。</span>
+<span class="c1">#SBATCH -n 8 ## 作业使用服务器 cpu 的数量，一个任务最多调用 12 个cpu。超过 12 个可能导致系统卡死。</span>
+<span class="c1">#SBATCH --ntasks-per-node=8 ## 和上面设置相同即可。</span>
+
+<span class="nb">ulimit</span> -l unlimited
+<span class="nb">ulimit</span> -s unlimited
+
+<span class="c1"># your codes</span>
+<span class="c1"># 激活环境</span>
+<span class="nb">source</span> activate py37
+<span class="c1"># 运行自己的脚本</span>
+python hello_world.py
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>提交到 SLURM</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sbatch hello_world.slurm
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>查看已提交的作业</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ squeue
+</pre></div>
+</div>
+<img alt="single rsync test" src="../_images/12.png"/>
+<ol class="arabic simple" start="6">
+<li><p>了解更多关于 slurm 作业系统 <a class="reference external" href="../job/slurm.html">Slurm 作业调度系统</a></p></li>
+</ol>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="../index.html" title="深度学习服务器平台用户文档"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> 深度学习服务器平台用户文档 </span>
+              </div>
+            </a>
+          
+          
+            <a href="../system/index.html" title="系统"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> 系统 </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright .
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a><br/>
+              沪交ICP备20190201
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

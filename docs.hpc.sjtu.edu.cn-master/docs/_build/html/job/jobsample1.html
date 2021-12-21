@@ -1,0 +1,882 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-190329530-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-190329530-1');
+</script>
+  
+  
+    <title>作业示例（基本） &#8212; dl_server_114 服务器用户手册  文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="作业示例（开发者）" href="jobsample2.html" />
+    <link rel="prev" title="Slurm 作业调度系统" href="slurm.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=#4000FF data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#job/jobsample1" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="dl_server_114 服务器用户手册  文档"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../_static/logos.png" height="26"
+                   alt="dl_server_114 服务器用户手册 文档 logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">超算平台用户手册</span>
+          <span class="md-header-nav__topic"> 作业示例（基本） </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/SJTU-HPC/docs.hpc.sjtu.edu.cn" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    SJTU HPC Docs
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">dl_server_114 服务器用户手册  文档</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">作业</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="dl_server_114 服务器用户手册 文档" class="md-nav__button md-logo">
+      
+        <img src="../_static/logos.png" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="dl_server_114 服务器用户手册 文档">超算平台用户手册</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/SJTU-HPC/docs.hpc.sjtu.edu.cn" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    SJTU HPC Docs
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickstart/index.html" class="md-nav__link">quickstart</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../system/index.html" class="md-nav__link">系统</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../accounts/index.html" class="md-nav__link">帐号</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../login/index.html" class="md-nav__link">登录</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../transport/index.html" class="md-nav__link">数据传输</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html" class="md-nav__link">作业</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="slurm.html" class="md-nav__link">Slurm 作业调度系统</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 作业示例（基本） </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">作业示例（基本）</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#job-jobsample1--page-root" class="md-nav__link">作业示例（基本）</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id2" class="md-nav__link">作业提交流程</a>
+        </li>
+        <li class="md-nav__item"><a href="#id3" class="md-nav__link">π 集群队列介绍</a>
+        </li>
+        <li class="md-nav__item"><a href="#id4" class="md-nav__link">各队列作业示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#small" class="md-nav__link">small</a>
+        </li>
+        <li class="md-nav__item"><a href="#cpu" class="md-nav__link">cpu</a>
+        </li>
+        <li class="md-nav__item"><a href="#huge" class="md-nav__link">huge</a>
+        </li>
+        <li class="md-nav__item"><a href="#c6t" class="md-nav__link">192c6t</a>
+        </li>
+        <li class="md-nav__item"><a href="#dgx2" class="md-nav__link">dgx2</a>
+        </li>
+        <li class="md-nav__item"><a href="#arm128c256g" class="md-nav__link">arm128c256g</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#id5" class="md-nav__link">常用软件作业示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#lammps" class="md-nav__link">LAMMPS 作业示例</a>
+        </li>
+        <li class="md-nav__item"><a href="#gromacs" class="md-nav__link">GROMACS 作业示例</a>
+        </li>
+        <li class="md-nav__item"><a href="#quantum-espresso" class="md-nav__link">Quantum ESPRESSO</a>
+        </li>
+        <li class="md-nav__item"><a href="#openfoam" class="md-nav__link">OpenFOAM</a>
+        </li>
+        <li class="md-nav__item"><a href="#tensorflow" class="md-nav__link">TensorFlow</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#id6" class="md-nav__link">其它示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#job-array" class="md-nav__link">Job Array 阵列作业</a>
+        </li>
+        <li class="md-nav__item"><a href="#id7" class="md-nav__link">作业状态邮件提醒</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#id2" class="md-nav__link">作业提交流程</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#id3" class="md-nav__link">π 集群队列介绍</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#id4" class="md-nav__link">各队列作业示例</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#id5" class="md-nav__link">常用软件作业示例</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#id6" class="md-nav__link">其它示例</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="jobsample2.html" class="md-nav__link">作业示例（开发者）</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="dgx.html" class="md-nav__link">服务器显卡使用文档</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../faq/index.html" class="md-nav__link">常见问题</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../download/index.html" class="md-nav__link">文档下载</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#job-jobsample1--page-root" class="md-nav__link">作业示例（基本）</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id2" class="md-nav__link">作业提交流程</a>
+        </li>
+        <li class="md-nav__item"><a href="#id3" class="md-nav__link">π 集群队列介绍</a>
+        </li>
+        <li class="md-nav__item"><a href="#id4" class="md-nav__link">各队列作业示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#small" class="md-nav__link">small</a>
+        </li>
+        <li class="md-nav__item"><a href="#cpu" class="md-nav__link">cpu</a>
+        </li>
+        <li class="md-nav__item"><a href="#huge" class="md-nav__link">huge</a>
+        </li>
+        <li class="md-nav__item"><a href="#c6t" class="md-nav__link">192c6t</a>
+        </li>
+        <li class="md-nav__item"><a href="#dgx2" class="md-nav__link">dgx2</a>
+        </li>
+        <li class="md-nav__item"><a href="#arm128c256g" class="md-nav__link">arm128c256g</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#id5" class="md-nav__link">常用软件作业示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#lammps" class="md-nav__link">LAMMPS 作业示例</a>
+        </li>
+        <li class="md-nav__item"><a href="#gromacs" class="md-nav__link">GROMACS 作业示例</a>
+        </li>
+        <li class="md-nav__item"><a href="#quantum-espresso" class="md-nav__link">Quantum ESPRESSO</a>
+        </li>
+        <li class="md-nav__item"><a href="#openfoam" class="md-nav__link">OpenFOAM</a>
+        </li>
+        <li class="md-nav__item"><a href="#tensorflow" class="md-nav__link">TensorFlow</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#id6" class="md-nav__link">其它示例</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#job-array" class="md-nav__link">Job Array 阵列作业</a>
+        </li>
+        <li class="md-nav__item"><a href="#id7" class="md-nav__link">作业状态邮件提醒</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="id1">
+<h1 id="job-jobsample1--page-root">作业示例（基本）<a class="headerlink" href="#job-jobsample1--page-root" title="永久链接至标题">¶</a></h1>
+<p>根据 π 集群的不同队列、不同应用软件，示例 slurm 作业脚本。</p>
+<section id="id2">
+<h2 id="id2">作业提交流程<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li><p>编写作业脚本</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vi</span> <span class="n">test</span><span class="o">.</span><span class="n">slurm</span>  <span class="c1"># 根据需求，选择计算资源：CPU 或 GPU、所需核数、是否需要大内存</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>提交作业</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="n">test</span><span class="o">.</span><span class="n">slurm</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>查看作业和资源</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squeue</span>       <span class="c1"># 查看正在排队或运行的作业</span>
+</pre></div>
+</div>
+<p>或</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sacct</span>        <span class="c1"># 查看过去 24 小时内已完成的作业</span>
+</pre></div>
+</div>
+<p>π 集群资源实时状态查询</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sinfo</span>        <span class="c1"># 若有 idle 或 mix 状态的节点，排队会比较快</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2 id="id3">π 集群队列介绍<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>π 集群上现有 small, cpu, huge, 192c6t, dgx2 和 arm128c256g 队列。</p>
+<p><code class="docutils literal notranslate"><span class="pre">scontrol</span> <span class="pre">show</span> <span class="pre">partition</span></code> 查看集群队列介绍</p>
+<p><code class="docutils literal notranslate"><span class="pre">sinfo</span></code> 查看集群资源实时状态</p>
+<table>
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>队列名</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>small</p></td>
+<td><p>允许使用 CPU 核数为
+1~35，每核配比 4G
+内
+存，节点可共享使用；单节点配置为
+40 核，192G 内存</p></td>
+</tr>
+<tr class="row-odd"><td><p>cpu</p></td>
+<td><p>允许使用 CPU 核数为
+40~24000，每核配比 4G
+内
+存，节点需独占使用；单节点配置为
+40核，192G
+内存。用户需独占节点，用满 40
+核，或使用部分核心的时候加上
+<code class="docutils literal notranslate"><span class="pre">--exclusive</span></code> 命令</p></td>
+</tr>
+<tr class="row-even"><td><p>huge</p></td>
+<td><p>允许使用 CPU 核数为
+1~80，每核配比 35G
+内
+存，节点可共享使用；单节点配置为
+80 核，3T 内存</p></td>
+</tr>
+<tr class="row-odd"><td><p>192c6t</p></td>
+<td><p>允许使用 CPU 核数为
+96~192，每核配比 31G
+内
+存，节点可共享使用；单节点配置为
+192 核，6T 内存</p></td>
+</tr>
+<tr class="row-even"><td><p>dgx2</p></td>
+<td><p>允许使用 GPU 卡数为
+1~128，推荐每卡配比 CPU 为 6，每
+CPU 配比 15G 内存；单节点配置为
+96 核，1.45T 内存，16&gt;块 32G
+显存的 V100卡</p></td>
+</tr>
+<tr class="row-odd"><td><p>arm128c256g</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>small, cpu, dgx2 队列允许的作业运行最长时间为 7 天。huge 和 192c6t 为 2天。</p>
+<p>若预计超出 7 天，需提前 2 天发邮件告知用户名和 jobID 以便延长时限</p>
+</section>
+<section id="id4">
+<h2 id="id4">各队列作业示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>下面根据不同队列，示例 slurm 作业脚本</p>
+<section id="small">
+<h3 id="small">small<a class="headerlink" href="#small" title="永久链接至标题">¶</a></h3>
+<p>small 队列 slurm 脚本示例</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test        # 作业名</span>
+<span class="c1">#SBATCH --partition=small      # small 队列</span>
+<span class="c1">#SBATCH -n 20                 # 总核数需 &lt;=35</span>
+<span class="c1">#SBATCH --ntasks-per-node=20   # 每节点核数</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+</pre></div>
+</div>
+</section>
+<section id="cpu">
+<h3 id="cpu">cpu<a class="headerlink" href="#cpu" title="永久链接至标题">¶</a></h3>
+<p>cpu 队列 slurm 脚本示例：多节点（160 核）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test        # 作业名</span>
+<span class="c1">#SBATCH --partition=cpu        # cpu 队列</span>
+<span class="c1">#SBATCH -n 160                # 总核数 160</span>
+<span class="c1">#SBATCH --ntasks-per-node=40   # 每节点核数</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+</pre></div>
+</div>
+<p>cpu 队列 slurm 脚本示例：单节点（40 核）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test        # 作业名</span>
+<span class="c1">#SBATCH --partition=cpu        # cpu 队列</span>
+<span class="c1">#SBATCH -n 40                 # 总核数 40</span>
+<span class="c1">#SBATCH --ntasks-per-node=40   # 每节点核数</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+</pre></div>
+</div>
+<p>cpu 队列 slurm 脚本示例：单节点（20核），比如为了独占整个节点的大内存</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test        # 作业名</span>
+<span class="c1">#SBATCH --partition=cpu        # cpu 队列</span>
+<span class="c1">#SBATCH -n 20                 # 总核数 20</span>
+<span class="c1">#SBATCH --ntasks-per-node=20   # 每节点核数</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+<span class="c1">#SBATCH --exclusive            # 独占节点（核数小于 40，cpu 队列必须加上此命令）</span>
+</pre></div>
+</div>
+</section>
+<section id="huge">
+<h3 id="huge">huge<a class="headerlink" href="#huge" title="永久链接至标题">¶</a></h3>
+<p>huge 队列 slurm 脚本示例：单节点（20 核，最高可用 80 核）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test         # 作业名</span>
+<span class="c1">#SBATCH --partition=huge        # huge 队列</span>
+<span class="c1">#SBATCH -n 20 # 总核数 20</span>
+<span class="c1">#SBATCH --ntasks-per-node=20    # 每节点核数</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+</pre></div>
+</div>
+</section>
+<section id="c6t">
+<h3 id="c6t">192c6t<a class="headerlink" href="#c6t" title="永久链接至标题">¶</a></h3>
+<p>192c6t 队列 slurm 脚本示例：单节点（96 核，最高可用 192 核）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test        # 作业名</span>
+<span class="c1">#SBATCH --partition=192c6      # 192c6t 队列</span>
+<span class="c1">#SBATCH -n 96                 # 总核数 96</span>
+<span class="c1">#SBATCH --ntasks-per-node=96   # 每节点核数</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+</pre></div>
+</div>
+</section>
+<section id="dgx2">
+<h3 id="dgx2">dgx2<a class="headerlink" href="#dgx2" title="永久链接至标题">¶</a></h3>
+<p>dgx2 队列 slurm 脚本示例：单节点，分配 2 块 GPU，GPU:CPU 配比 1:6</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test        # 作业名</span>
+<span class="c1">#SBATCH --partition=dgx2       # dgx2 队列</span>
+<span class="c1">#SBATCH -N 1</span>
+<span class="c1">#SBATCH --ntasks-per-node=1</span>
+<span class="c1">#SBATCH --cpus-per-task=12     # 1:6 的 GPU:CPU 配比</span>
+<span class="c1">#SBATCH --gres=gpu:2           # 2 块 GPU</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+</pre></div>
+</div>
+</section>
+<section id="arm128c256g">
+<h3 id="arm128c256g">arm128c256g<a class="headerlink" href="#arm128c256g" title="永久链接至标题">¶</a></h3>
+<p>arm128c256g 队列 slurm 脚本示例：单节点60核</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test</span>
+<span class="c1">#SBATCH --partition=arm128c256g</span>
+<span class="c1">#SBATCH -N 1</span>
+<span class="c1">#SBATCH --ntasks-per-node=60</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+
+<span class="nb">source</span> /lustre/share/singularity/commercial-app/vasp/activate arm
+
+mpirun -n <span class="nv">$SLURM_NTASKS</span> vasp_std
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2 id="id5">常用软件作业示例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>下面根据不同应用软件，示例 slurm 作业脚本</p>
+<section id="lammps">
+<h3 id="lammps">LAMMPS 作业示例<a class="headerlink" href="#lammps" title="永久链接至标题">¶</a></h3>
+<p>cpu 队列 slurm 脚本示例 LAMMPS</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test         # 作业名</span>
+<span class="c1">#SBATCH --partition=cpu         # cpu 队列</span>
+<span class="c1">#SBATCH -n 80                  # 总核数 80</span>
+<span class="c1">#SBATCH --ntasks-per-node=40    # 每节点核数</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+
+module load lammps
+
+srun --mpi<span class="o">=</span>pmi2 lmp -i YOUR_INPUT_FILE
+</pre></div>
+</div>
+</section>
+<section id="gromacs">
+<h3 id="gromacs">GROMACS 作业示例<a class="headerlink" href="#gromacs" title="永久链接至标题">¶</a></h3>
+<p>cpu 队列 slurm 脚本示例 GROMACS</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test         # 作业名</span>
+<span class="c1">#SBATCH --partition=cpu         # cpu 队列</span>
+<span class="c1">#SBATCH -n 80                  # 总核数 80</span>
+<span class="c1">#SBATCH --ntasks-per-node=40    # 每节点核数</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+
+module load gromacs/2020-cpu
+
+srun --mpi<span class="o">=</span>pmi2 gmx_mpi mdrun -deffnm -s test.tpr -ntomp <span class="m">1</span>
+</pre></div>
+</div>
+</section>
+<section id="quantum-espresso">
+<h3 id="quantum-espresso">Quantum ESPRESSO<a class="headerlink" href="#quantum-espresso" title="永久链接至标题">¶</a></h3>
+<p>cpu 队列 slurm 脚本示例 Quantum ESPRESSO</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test         # 作业名</span>
+<span class="c1">#SBATCH --partition=cpu         # cpu 队列</span>
+<span class="c1">#SBATCH -n 80                  # 总核数 80</span>
+<span class="c1">#SBATCH --ntasks-per-node=40    # 每节点核数</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+
+module load quantum-espresso
+
+srun --mpi<span class="o">=</span>pmi2 pw.x -i test.in
+</pre></div>
+</div>
+</section>
+<section id="openfoam">
+<h3 id="openfoam">OpenFOAM<a class="headerlink" href="#openfoam" title="永久链接至标题">¶</a></h3>
+<p>cpu 队列 slurm 脚本示例 OpenFoam</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test         # 作业名</span>
+<span class="c1">#SBATCH --partition=cpu         # cpu 队列</span>
+<span class="c1">#SBATCH -n 80                  # 总核数 80</span>
+<span class="c1">#SBATCH --ntasks-per-node=40    # 每节点核数</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+
+module load openfoam
+
+srun --mpi<span class="o">=</span>pmi2 icoFoam -parallel
+</pre></div>
+</div>
+</section>
+<section id="tensorflow">
+<h3 id="tensorflow">TensorFlow<a class="headerlink" href="#tensorflow" title="永久链接至标题">¶</a></h3>
+<p>gpu 队列 slurm 脚本示例 TensorFlow</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH -J test</span>
+<span class="c1">#SBATCH -p dgx2</span>
+<span class="c1">#SBATCH -o %j.out</span>
+<span class="c1">#SBATCH -e %j.err</span>
+<span class="c1">#SBATCH -N 1</span>
+<span class="c1">#SBATCH --ntasks-per-node=1</span>
+<span class="c1">#SBATCH --cpus-per-task=12</span>
+<span class="c1">#SBATCH --gres=gpu:2</span>
+
+module load miniconda3
+<span class="nb">source</span> activate tf-env
+
+python -c ’import tensorflow as tf<span class="p">;</span> <span class="se">\</span>
+       print<span class="o">(</span>tf.__version__<span class="o">)</span><span class="p">;</span> <span class="se">\</span>
+       print<span class="o">(</span>tf.test.is_gpu_available<span class="o">())</span><span class="p">;</span>’
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id6">
+<h2 id="id6">其它示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<section id="job-array">
+<h3 id="job-array">Job Array 阵列作业<a class="headerlink" href="#job-array" title="永久链接至标题">¶</a></h3>
+<p>一批作业，若所需资源和内容相似，可借助 Job Array 批量提交。Job Array
+中的每一个作业在调度时视为独立的作业。</p>
+<p>cpu 队列 slurm 脚本示例 array</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test           # 作业名</span>
+<span class="c1">#SBATCH --partition=small         # small 队列</span>
+<span class="c1">#SBATCH -n 1                      # 总核数 1</span>
+<span class="c1">#SBATCH --ntasks-per-node=1       # 每节点核数</span>
+<span class="c1">#SBATCH --output=array_%A_%a.out</span>
+<span class="c1">#SBATCH --output=array_%A_%a.err</span>
+<span class="c1">#SBATCH --array=1-20%10           # 总共 20 个子任务，每次最多同时运行 10 个</span>
+
+<span class="nb">echo</span> <span class="nv">$SLURM_ARRAY_TASK_ID</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h3 id="id7">作业状态邮件提醒<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>–mail-type= 指定状态发生时，发送邮件通知: ALL, BEGIN, END, FAIL</p>
+<p>small 队列 slurm 脚本示例：邮件提醒</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=test</span>
+<span class="c1">#SBATCH --partition=small</span>
+<span class="c1">#SBATCH -n 20</span>
+<span class="c1">#SBATCH --ntasks-per-node=20</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+<span class="c1">#SBATCH --mail-type=end           # 作业结束时，邮件提醒</span>
+<span class="c1">#SBATCH --mail-user=XX@sjtu.edu.cn</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="slurm.html" title="Slurm 作业调度系统"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Slurm 作业调度系统 </span>
+              </div>
+            </a>
+          
+          
+            <a href="jobsample2.html" title="作业示例（开发者）"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> 作业示例（开发者） </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright .
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a><br/>
+              沪交ICP备20190201
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
